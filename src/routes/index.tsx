@@ -1,424 +1,629 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { ArrowRight, ChevronRight } from "lucide-react";
+import heroImg from "@/assets/hero-industrial.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import { Section, SectionHeading, Eyebrow } from "@/components/site/section";
+import { Reveal } from "@/components/site/reveal";
+import { Counter } from "@/components/site/counter";
+import { Marquee } from "@/components/site/marquee";
 import {
-  ArrowRight, Brain, Code2, Cloud, Smartphone, Workflow, Building2,
-  ShieldCheck, Sparkles, Bot, Database, LineChart, Cpu, Rocket,
-  CheckCircle2, Layers, Globe2,
-} from "lucide-react";
-import { NeuralHero } from "@/components/site/NeuralHero";
-import { Marquee } from "@/components/site/Marquee";
-import { Reveal, Stagger, StaggerItem } from "@/components/site/Reveal";
-import { SectionHeading } from "@/components/site/SectionHeading";
-import { CTASection } from "@/components/site/CTASection";
+  serviceGroups,
+  industries,
+  workforceCategories,
+  processSteps,
+  whyChoose,
+  trustedClients,
+  stats,
+  faqs,
+} from "@/components/site/content";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Felix IMSI — Building Intelligent Digital Futures" },
+      { title: "Felix IMSI — Trusted Workforce Solutions Partner in India" },
       {
         name: "description",
         content:
-          "AI, software, cloud and automation for enterprises. Felix IMSI partners with businesses to design, build and scale intelligent digital products.",
+          "Reliable industrial manpower, contract & permanent staffing, HR outsourcing, payroll, and statutory compliance for businesses across India.",
       },
-      { property: "og:title", content: "Felix IMSI — Building Intelligent Digital Futures" },
-      { property: "og:description", content: "AI, software, cloud and automation for enterprises. Felix IMSI partners with businesses to design, build and scale intelligent digital products." },
+      { property: "og:title", content: "Felix IMSI — Trusted Workforce Solutions Partner in India" },
+      {
+        property: "og:description",
+        content:
+          "Reliable industrial manpower, staffing, HR outsourcing, payroll, and compliance for industries across India.",
+      },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
   }),
   component: HomePage,
 });
 
-const services = [
-  { icon: Brain, title: "Artificial Intelligence", desc: "AI agents, LLM integration, computer vision, predictive analytics.", to: "/ai-solutions" },
-  { icon: Code2, title: "Software Development", desc: "Custom software, ERP, CRM, enterprise applications.", to: "/services" },
-  { icon: Globe2, title: "Web Development", desc: "Corporate websites, portals, dashboards, e-commerce.", to: "/services" },
-  { icon: Smartphone, title: "Mobile Applications", desc: "iOS, Android, cross-platform apps.", to: "/services" },
-  { icon: Building2, title: "Enterprise Solutions", desc: "Business platforms that scale across teams and geographies.", to: "/solutions" },
-  { icon: Cloud, title: "Cloud Services", desc: "Migration, DevOps, infrastructure, monitoring, security.", to: "/services" },
-  { icon: Workflow, title: "Business Automation", desc: "RPA, workflow automation, AI-driven process orchestration.", to: "/services" },
-  { icon: Sparkles, title: "Digital Transformation", desc: "End-to-end modernization for legacy enterprises.", to: "/solutions" },
-];
-
-const clients = ["Foxconn", "Motherson", "Mobile Electronics", "DS Connectors", "Sundaram", "TVS", "Ashok Leyland", "Hyundai", "Renault Nissan"];
-
-const industries = [
-  "Manufacturing", "Healthcare", "Finance", "Retail", "Education",
-  "Logistics", "Construction", "Real Estate", "Hospitality", "HR Management",
-];
-
-const stack = [
-  "React", "Next.js", "TypeScript", "Python", "Node.js", "PostgreSQL",
-  "OpenAI", "LangChain", "AWS", "Azure", "Docker", "Kubernetes",
-];
-
-const timeline = [
-  { year: "Founded", title: "Workforce Solutions", desc: "Established as an integrated management services firm serving major manufacturers." },
-  { year: "Growth", title: "Enterprise Manpower", desc: "Scaled to serve Foxconn, Motherson and other tier-one manufacturing giants." },
-  { year: "Digital", title: "Technology Practice", desc: "Launched a dedicated software engineering practice for internal automation." },
-  { year: "AI Era", title: "AI Innovation Company", desc: "Reborn as an AI-first partner delivering intelligent products at enterprise scale." },
-];
-
-const process = [
-  { n: "01", t: "Discover", d: "Understand your business, data, systems and goals." },
-  { n: "02", t: "Design", d: "Architect the AI + software solution end-to-end." },
-  { n: "03", t: "Build", d: "Engineer with modern stacks, security and scalability baked in." },
-  { n: "04", t: "Deploy", d: "Ship to production with cloud, DevOps and observability." },
-  { n: "05", t: "Evolve", d: "Iterate with data, model retraining and continuous delivery." },
-];
-
-const stats = [
-  { k: "150+", v: "Enterprise Projects" },
-  { k: "40+", v: "AI Deployments" },
-  { k: "15+", v: "Industries Served" },
-  { k: "10 yrs", v: "In Business" },
-];
-
 function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-hero text-white">
-        <NeuralHero />
-        <div className="relative container-x pt-24 pb-32 md:pt-32 md:pb-40">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
-              <span className="size-1.5 rounded-full bg-brand-accent animate-pulse" />
-              AI &amp; Technology Innovation
-            </span>
-            <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-white">
-              Building <em className="not-italic text-gradient-brand bg-gradient-to-r from-[#ff5a5a] via-[#e63946] to-[#ff9b9b] bg-clip-text text-transparent">Intelligent</em> Digital Futures
+      <Hero />
+      <TrustBar />
+      <About />
+      <Services />
+      <Marquee
+        items={[
+          "Industrial Staffing",
+          "Contract Staffing",
+          "Permanent Recruitment",
+          "HR Outsourcing",
+          "Payroll Management",
+          "Compliance Management",
+          "Executive Search",
+          "Skilled Workforce",
+        ]}
+      />
+      <Industries />
+      <WhyChoose />
+      <Process />
+      <WorkforceCategoriesSection />
+      <ComplianceSnapshot />
+      <StatsBand />
+      <Testimonials />
+      <GalleryPreview />
+      <FAQSection />
+      <ContactCTA />
+    </>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative pt-24 md:pt-32 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={heroImg}
+          alt=""
+          className="h-full w-full object-cover"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-deep/85 to-brand/70" />
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
+
+      <div className="container-x relative pt-16 pb-24 md:pt-24 md:pb-32">
+        <div className="max-w-4xl">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-white" />
+              Your Trusted Workforce Solutions Partner
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white text-balance leading-[1.05]">
+              Building Strong Workforces.
+              <br />
+              <span className="text-white/70">Powering Successful Businesses.</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/70 max-w-2xl">
-              We help enterprises transform through AI, software engineering, automation and
-              digital innovation — from strategy to production.
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="mt-6 max-w-2xl text-base md:text-lg text-white/80 leading-relaxed">
+              Providing reliable workforce solutions, staffing services, HR outsourcing, and
+              statutory compliance support for industries across India.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
+          </Reveal>
+          <Reveal delay={300}>
+            <div className="mt-9 flex flex-wrap gap-3">
               <Link
-                to="/services"
-                className="inline-flex items-center gap-2 rounded-md bg-white text-ink px-6 py-3.5 text-sm font-medium hover:bg-white/90 transition"
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-sm bg-white px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-brand-deep hover:bg-white/90 transition-colors"
               >
-                Explore Services <ArrowRight className="size-4" />
+                Hire Workforce
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-gradient-brand text-white px-6 py-3.5 text-sm font-medium shadow-elegant hover:shadow-glow transition"
+                className="inline-flex items-center gap-2 rounded-sm border border-white/40 bg-white/5 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white hover:bg-white/10 backdrop-blur-md transition-colors"
               >
-                Book Consultation
+                Request Consultation
               </Link>
               <Link
-                to="/portfolio"
-                className="inline-flex items-center gap-2 rounded-md border border-white/25 text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition"
+                to="/services"
+                className="inline-flex items-center gap-2 rounded-sm px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white/90 hover:text-white transition-colors"
               >
-                View Portfolio
+                View Services <ChevronRight className="h-4 w-4" />
               </Link>
             </div>
-
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-              {stats.map((s) => (
-                <div key={s.v}>
-                  <div className="font-display text-3xl md:text-4xl text-white">{s.k}</div>
-                  <div className="text-xs uppercase tracking-[0.15em] text-white/50 mt-1">{s.v}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Trust marquee */}
-        <div className="relative border-t border-white/10 py-6 bg-black/40 backdrop-blur">
-          <div className="container-x mb-4 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/50">
-            <span className="h-px flex-1 bg-white/10" />
-            Trusted by enterprises worldwide
-            <span className="h-px flex-1 bg-white/10" />
-          </div>
-          <Marquee
-            items={clients.map((c) => (
-              <span className="font-display text-2xl md:text-3xl text-white/60 hover:text-white transition">
-                {c}
-              </span>
-            ))}
-          />
-        </div>
-      </section>
-
-      {/* Technology overview */}
-      <section className="container-x py-24">
-        <div className="grid md:grid-cols-[1.2fr_1fr] gap-12 items-end">
-          <SectionHeading
-            eyebrow="What we do"
-            title="A full-stack AI & technology partner for the modern enterprise."
-            description="From boardroom strategy to production-grade AI systems — we operate as an extension of your engineering, data and product teams."
-          />
-          <Reveal delay={0.15}>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Brain, t: "AI-first" },
-                { icon: ShieldCheck, t: "Enterprise-grade" },
-                { icon: Rocket, t: "Ship velocity" },
-                { icon: Layers, t: "Full-stack" },
-              ].map(({ icon: Icon, t }) => (
-                <div key={t} className="rounded-2xl border border-black/5 bg-surface-muted p-5">
-                  <Icon className="size-6 text-brand" />
-                  <div className="mt-3 font-medium text-ink">{t}</div>
+          </Reveal>
+          <Reveal delay={400}>
+            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
+              {stats.slice(0, 4).map((s) => (
+                <div key={s.label}>
+                  <div className="text-3xl md:text-4xl font-display font-bold text-white">
+                    <Counter to={s.value} suffix={s.suffix} />
+                  </div>
+                  <div className="mt-1 text-xs uppercase tracking-[0.15em] text-white/60">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
           </Reveal>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      {/* Services grid */}
-      <section className="bg-surface-muted py-24">
-        <div className="container-x">
-          <SectionHeading eyebrow="Services" title="Everything you need to build intelligent products." />
-          <Stagger className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ icon: Icon, title, desc, to }) => (
-              <StaggerItem key={title}>
-                <Link
-                  to={to}
-                  className="group block h-full rounded-2xl bg-white border border-black/5 p-6 hover:border-brand/40 hover:shadow-elegant transition-all"
-                >
-                  <div className="grid place-items-center h-11 w-11 rounded-xl bg-gradient-brand text-white shadow-elegant group-hover:scale-110 transition-transform">
-                    <Icon className="size-5" />
-                  </div>
-                  <h3 className="mt-5 font-display text-xl text-ink">{title}</h3>
-                  <p className="mt-2 text-sm text-ink-muted leading-relaxed">{desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
-                    Learn more <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
+function TrustBar() {
+  return (
+    <div className="border-y border-border bg-muted/60">
+      <div className="container-x py-6 flex flex-wrap items-center justify-between gap-x-10 gap-y-4">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          Trusted by industry leaders
         </div>
-      </section>
-
-      {/* AI Innovation showcase */}
-      <section className="relative overflow-hidden bg-[#0a0a0a] text-white py-28">
-        <div className="absolute inset-0 opacity-40">
-          <NeuralHero />
-        </div>
-        <div className="relative container-x grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white/70">
-              <Sparkles className="size-3 text-brand-accent" /> AI Innovation
-            </span>
-            <h2 className="mt-6 font-display text-4xl md:text-6xl leading-[1.05]">
-              AI agents that think, act and integrate with your business.
-            </h2>
-            <p className="mt-5 text-white/70 max-w-xl">
-              Purpose-built AI systems that read your documents, query your databases, call your
-              APIs and collaborate with your teams — deployed securely in your cloud.
-            </p>
-            <div className="mt-8 grid sm:grid-cols-2 gap-3">
-              {[
-                "LLM & RAG systems",
-                "Document intelligence",
-                "Voice & conversational AI",
-                "Computer vision on the edge",
-                "Predictive analytics",
-                "Generative AI experiences",
-              ].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-white/80">
-                  <CheckCircle2 className="size-4 text-brand-accent" /> {f}
-                </div>
-              ))}
-            </div>
-            <Link
-              to="/ai-solutions"
-              className="mt-10 inline-flex items-center gap-2 rounded-md bg-gradient-brand px-5 py-3 text-sm font-medium text-white shadow-elegant hover:shadow-glow"
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+          {trustedClients.map((name) => (
+            <span
+              key={name}
+              className="font-display text-sm md:text-base font-bold uppercase tracking-wider text-foreground/50 hover:text-foreground transition-colors"
             >
-              Explore AI Solutions <ArrowRight className="size-4" />
+              {name}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <Section>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <Reveal className="lg:col-span-5">
+          <Eyebrow>About Felix IMSI</Eyebrow>
+          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-balance">
+            More than a manpower supplier. A workforce partner.
+          </h2>
+        </Reveal>
+        <Reveal delay={150} className="lg:col-span-7">
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            For over five years, Felix IMSI Private Limited has helped businesses across India
+            build reliable teams — from factory-floor operators to executive leadership. We combine
+            deep industry knowledge with disciplined recruitment, transparent payroll, and
+            end-to-end statutory compliance.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+            Our approach is simple: understand each client's operations, deploy the right people
+            fast, and support them so businesses can focus on growth — not on hiring headaches.
+          </p>
+          <div className="mt-8 grid grid-cols-2 gap-6">
+            {[
+              ["5+", "Years of Experience"],
+              ["13", "Industries Served"],
+              ["150+", "Active Clients"],
+              ["96%", "Fulfilment Success"],
+            ].map(([v, l]) => (
+              <div key={l} className="border-l-2 border-primary pl-4">
+                <div className="text-2xl font-display font-bold text-foreground">{v}</div>
+                <div className="text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                  {l}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-brand-deep"
+            >
+              Read our story <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
 
-          <Reveal delay={0.1}>
-            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-elegant">
-              <div className="flex items-center gap-2 text-xs text-white/60">
-                <span className="size-2 rounded-full bg-brand-accent animate-pulse" />
-                felix.ai — live agent
+function Services() {
+  return (
+    <Section className="bg-muted/50">
+      <SectionHeading
+        eyebrow="Our Workforce Solutions"
+        title="A complete staffing & compliance suite"
+        description="Eight service families designed to cover every workforce need — from a single hire to a full production ramp-up."
+      />
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {serviceGroups.map((s, i) => (
+          <Reveal key={s.slug} delay={i * 60}>
+            <Link
+              to="/services"
+              className="group flex h-full flex-col rounded-sm border border-border bg-background p-7 hover:border-primary hover:shadow-lg hover:-translate-y-1 transition-all"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-sm bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <s.icon className="h-5 w-5" />
               </div>
-              <div className="mt-5 space-y-3 font-mono text-[13px]">
-                {[
-                  { r: "user", t: "Summarize Q3 supplier defects and route the top 3 to procurement." },
-                  { r: "agent", t: "Analyzing 12,483 QC records across 4 plants..." },
-                  { r: "agent", t: "Top defects: cable insulation (2.1%), solder cold joints (1.4%), housing warp (0.9%)." },
-                  { r: "agent", t: "Routed 3 tickets to procurement@felixims.com. ETA: 2 days." },
-                ].map((m, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 8 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15 }}
-                    className={`rounded-xl px-4 py-3 ${
-                      m.r === "user" ? "bg-white/10 text-white" : "bg-brand/20 text-white border border-brand/30"
-                    }`}
-                  >
-                    <div className="text-[10px] uppercase tracking-widest opacity-60 mb-1">{m.r}</div>
-                    {m.t}
-                  </motion.div>
-                ))}
+              <h3 className="mt-5 text-lg font-display font-bold text-foreground">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
+                {s.summary}
+              </p>
+              <div className="mt-5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+                Explore <ArrowRight className="h-3.5 w-3.5" />
               </div>
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                {[{ k: "1.2s", v: "Latency" }, { k: "99.4%", v: "Accuracy" }, { k: "24/7", v: "Uptime" }].map((s) => (
-                  <div key={s.v} className="rounded-xl bg-black/40 p-3">
-                    <div className="font-display text-xl text-white">{s.k}</div>
-                    <div className="text-[10px] uppercase tracking-widest text-white/50">{s.v}</div>
-                  </div>
-                ))}
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Industries() {
+  return (
+    <Section>
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <SectionHeading
+          eyebrow="Industries We Serve"
+          title="Deployed across India's core sectors"
+          description="From automotive assembly lines to warehousing hubs — Felix IMSI has staffed operations in every major industry vertical."
+          className="mb-0"
+        />
+        <Link
+          to="/industries"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-brand-deep"
+        >
+          View all industries <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+      <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        {industries.map((ind, i) => (
+          <Reveal key={ind.name} delay={i * 40}>
+            <div className="group rounded-sm border border-border bg-background p-6 hover:border-primary hover:bg-brand-deep hover:text-white transition-all">
+              <ind.icon className="h-6 w-6 text-primary group-hover:text-white" />
+              <div className="mt-4 font-display font-bold">{ind.name}</div>
+              <div className="mt-1 text-xs text-muted-foreground group-hover:text-white/70">
+                {ind.desc}
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
+        ))}
+      </div>
+    </Section>
+  );
+}
 
-      {/* Industries */}
-      <section className="container-x py-24">
-        <SectionHeading eyebrow="Industries" title="Deep expertise across sectors." />
-        <Stagger className="mt-14 grid grid-cols-2 md:grid-cols-5 gap-3" gap={0.04}>
-          {industries.map((i) => (
-            <StaggerItem key={i}>
-              <div className="rounded-xl border border-black/5 bg-white p-5 text-center hover:border-brand/40 hover:bg-brand/5 transition-colors">
-                <span className="text-sm font-medium text-ink">{i}</span>
+function WhyChoose() {
+  return (
+    <Section className="bg-muted/50">
+      <SectionHeading
+        eyebrow="Why Choose Felix IMSI"
+        title="Eight reasons businesses trust us"
+        description="Speed, compliance, and consistency — delivered by a team that understands what it takes to keep operations running."
+        align="center"
+      />
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+        {whyChoose.map((w, i) => (
+          <Reveal key={w.title} delay={i * 50}>
+            <div>
+              <w.icon className="h-6 w-6 text-primary" />
+              <div className="mt-4 font-display font-bold">{w.title}</div>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Process() {
+  return (
+    <Section>
+      <SectionHeading
+        eyebrow="Our Recruitment Process"
+        title="A disciplined eight-step workflow"
+        description="Every mandate follows the same rigorous process — so quality and timelines stay consistent whether we're hiring one engineer or two hundred workers."
+      />
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {processSteps.map((step, i) => (
+          <Reveal key={step.title} delay={i * 70}>
+            <div className="relative rounded-sm border border-border p-6 h-full">
+              <div className="absolute top-4 right-5 font-display text-4xl font-black text-primary/10">
+                {String(i + 1).padStart(2, "0")}
               </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
+              <step.icon className="h-6 w-6 text-primary" />
+              <div className="mt-4 font-display font-bold">{step.title}</div>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
 
-      {/* Tech stack */}
-      <section className="bg-surface-muted py-24">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Technology stack"
-            title="Modern, proven, production-ready."
-            description="We build with the best of the ecosystem — carefully chosen for reliability, performance and long-term maintainability."
-          />
-          <div className="mt-14">
-            <Marquee
-              className="mask-fade"
-              items={stack.map((s) => (
-                <span className="font-display text-3xl md:text-4xl text-ink/50 hover:text-brand transition">
-                  {s}
-                </span>
-              ))}
-            />
+function WorkforceCategoriesSection() {
+  return (
+    <Section className="bg-brand-deep text-white">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <Reveal className="lg:col-span-5">
+          <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
+            <span className="h-px w-6 bg-white/80" /> Featured Workforce Categories
           </div>
-        </div>
-      </section>
-
-      {/* Transformation timeline */}
-      <section className="container-x py-28">
-        <SectionHeading
-          eyebrow="Our journey"
-          title="From workforce solutions to AI innovation."
-          description="A decade of enterprise operations experience, now powering an AI-first technology company."
-        />
-        <div className="mt-16 grid md:grid-cols-4 gap-6 relative">
-          <div className="hidden md:block absolute top-6 left-6 right-6 h-px bg-gradient-to-r from-brand/40 via-brand/20 to-transparent" />
-          {timeline.map((t, i) => (
-            <Reveal key={t.year} delay={i * 0.08}>
-              <div className="relative">
-                <div className="grid place-items-center h-12 w-12 rounded-full bg-gradient-brand text-white font-display text-lg shadow-elegant">
-                  {i + 1}
-                </div>
-                <div className="mt-5">
-                  <div className="text-xs uppercase tracking-[0.18em] text-brand">{t.year}</div>
-                  <div className="mt-2 font-display text-2xl text-ink">{t.title}</div>
-                  <p className="mt-2 text-sm text-ink-muted leading-relaxed">{t.desc}</p>
+          <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white text-balance">
+            The people behind India's production.
+          </h2>
+          <p className="mt-4 text-white/70 leading-relaxed">
+            From production lines to back offices, our talent pool covers every role your operation
+            depends on. Verified, skill-mapped, and deployment-ready.
+          </p>
+        </Reveal>
+        <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-2.5">
+          {workforceCategories.map((c, i) => (
+            <Reveal key={c} delay={i * 30}>
+              <div className="group rounded-sm border border-white/15 bg-white/[0.03] p-5 hover:bg-white hover:text-brand-deep transition-colors">
+                <div className="font-display font-bold text-sm">{c}</div>
+                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/50 group-hover:text-brand-deep/60">
+                  Available Pan-India
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
-      </section>
+      </div>
+    </Section>
+  );
+}
 
-      {/* Why Felix */}
-      <section className="bg-[#0a0a0a] text-white py-28">
-        <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white/70">
-              Why Felix IMSI
-            </span>
-            <h2 className="mt-6 font-display text-4xl md:text-6xl leading-[1.05]">
-              A partner that combines enterprise operations DNA with cutting-edge AI.
+function ComplianceSnapshot() {
+  return (
+    <Section>
+      <div className="rounded-sm border border-border bg-gradient-to-br from-muted to-background p-8 md:p-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7">
+            <Eyebrow>Compliance Management</Eyebrow>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-balance">
+              Statutory compliance handled end-to-end.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              PF, ESI, Professional Tax, Labour Welfare Fund, Contract Labour Act, minimum wages
+              and payroll compliance — all documented, audited, and delivered on time.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["PF", "ESI", "Professional Tax", "LWF", "CLRA", "Minimum Wages", "Audits", "Government Filings"].map(
+                (c) => (
+                  <span
+                    key={c}
+                    className="inline-flex items-center rounded-sm border border-primary/30 bg-primary/5 px-3 py-1.5 text-xs font-medium text-primary"
+                  >
+                    {c}
+                  </span>
+                )
+              )}
+            </div>
+            <div className="mt-7">
+              <Link
+                to="/compliance"
+                className="inline-flex items-center gap-2 rounded-sm bg-primary px-5 py-3 text-xs font-semibold uppercase tracking-wider text-primary-foreground hover:bg-brand-deep"
+              >
+                Explore compliance services <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="rounded-sm bg-brand-deep text-white p-8">
+              <div className="text-6xl md:text-7xl font-display font-black leading-none">100%</div>
+              <div className="mt-3 text-sm text-white/70">
+                Statutory compliance record maintained across all deployed workforce.
+              </div>
+              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-white/15 pt-6">
+                <div>
+                  <div className="text-2xl font-display font-bold">
+                    <Counter to={60} />+
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60 mt-1">
+                    Monthly Filings
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-display font-bold">
+                    <Counter to={0} />
+                    <span className="text-primary">✓</span>
+                  </div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60 mt-1">
+                    Non-compliance Events
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function StatsBand() {
+  return (
+    <section className="border-y border-border bg-background">
+      <div className="container-x py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          {stats.map((s) => (
+            <div key={s.label} className="text-center">
+              <div className="text-3xl md:text-4xl font-display font-black text-primary">
+                <Counter to={s.value} suffix={s.suffix} />
+              </div>
+              <div className="mt-2 text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const items = [
+    {
+      quote:
+        "Felix IMSI ramped up 200+ line operators for our new plant in under three weeks. Their compliance handling took a real load off our HR team.",
+      name: "Plant HR Head",
+      role: "Automotive Manufacturing",
+    },
+    {
+      quote:
+        "Consistent quality of workforce, transparent payroll, and always available on call. They feel like an extension of our own team.",
+      name: "Operations Director",
+      role: "Electronics Assembly",
+    },
+    {
+      quote:
+        "We've worked with several agencies. Felix IMSI stands out for their attention to statutory documentation and speed of replacement.",
+      name: "HR Business Partner",
+      role: "Warehousing & Logistics",
+    },
+  ];
+  return (
+    <Section className="bg-muted/50">
+      <SectionHeading
+        eyebrow="Client Testimonials"
+        title="What our clients say"
+        align="center"
+      />
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
+        {items.map((t, i) => (
+          <Reveal key={i} delay={i * 100}>
+            <figure className="h-full flex flex-col rounded-sm border border-border bg-background p-8">
+              <div className="text-primary text-4xl leading-none font-display">"</div>
+              <blockquote className="mt-3 text-sm leading-relaxed text-foreground flex-1">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-6 pt-6 border-t border-border">
+                <div className="font-semibold text-sm">{t.name}</div>
+                <div className="text-xs text-muted-foreground mt-0.5">{t.role}</div>
+              </figcaption>
+            </figure>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function GalleryPreview() {
+  const imgs = [gallery1, gallery2, gallery3, gallery4];
+  return (
+    <Section>
+      <div className="flex items-end justify-between mb-10">
+        <SectionHeading eyebrow="Gallery" title="Inside Felix IMSI" className="mb-0" />
+        <Link
+          to="/gallery"
+          className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-brand-deep"
+        >
+          View gallery <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {imgs.map((src, i) => (
+          <Reveal key={i} delay={i * 60}>
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-sm">
+              <img
+                src={src}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function FAQSection() {
+  return (
+    <Section className="bg-muted/50">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="lg:col-span-5">
+          <SectionHeading
+            eyebrow="Frequently Asked Questions"
+            title="Answers, upfront."
+            description="Common questions from businesses evaluating Felix IMSI as their workforce partner."
+          />
+        </div>
+        <div className="lg:col-span-7">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((f, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className="text-left font-semibold text-base">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function ContactCTA() {
+  return (
+    <section className="relative overflow-hidden bg-primary text-primary-foreground">
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="container-x relative py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-8">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
+              Ready to build your workforce?
+            </div>
+            <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white text-balance">
+              Let's staff your operations — reliably, compliantly, at scale.
             </h2>
           </div>
-          <Stagger className="grid sm:grid-cols-2 gap-4">
-            {[
-              { icon: Cpu, t: "AI-first engineering", d: "Every solution designed with intelligence at the core." },
-              { icon: ShieldCheck, t: "Enterprise trust", d: "Security, compliance and governance built-in." },
-              { icon: Database, t: "Data-native", d: "Real production data, not proof-of-concept demos." },
-              { icon: LineChart, t: "Measurable ROI", d: "We ship outcomes, not deliverables." },
-            ].map(({ icon: Icon, t, d }) => (
-              <StaggerItem key={t}>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur h-full">
-                  <Icon className="size-6 text-brand-accent" />
-                  <div className="mt-4 font-display text-xl">{t}</div>
-                  <p className="mt-2 text-sm text-white/60">{d}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="container-x py-28">
-        <SectionHeading eyebrow="Process" title="How we deliver." />
-        <Stagger className="mt-14 grid md:grid-cols-5 gap-5">
-          {process.map((p) => (
-            <StaggerItem key={p.n}>
-              <div className="rounded-2xl border border-black/5 p-6 h-full hover:border-brand/40 transition">
-                <div className="font-display text-3xl text-brand">{p.n}</div>
-                <div className="mt-3 font-medium text-ink">{p.t}</div>
-                <p className="mt-2 text-sm text-ink-muted">{p.d}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </section>
-
-      {/* Insights teaser */}
-      <section className="bg-surface-muted py-24">
-        <div className="container-x">
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <SectionHeading eyebrow="Insights" title="Latest thinking from our team." />
-            <Link to="/resources" className="text-sm font-medium text-brand inline-flex items-center gap-1">
-              All insights <ArrowRight className="size-4" />
+          <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-sm bg-white px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-brand-deep hover:bg-white/90"
+            >
+              Request Consultation <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 rounded-sm border border-white/40 px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white hover:bg-white/10"
+            >
+              View Services
             </Link>
           </div>
-          <Stagger className="mt-14 grid md:grid-cols-3 gap-6">
-            {[
-              { tag: "AI", t: "Building enterprise-ready LLM agents in 2026", d: "The architectural patterns that separate demos from production." },
-              { tag: "Automation", t: "Beyond RPA: why AI-native automation wins", d: "Traditional RPA hits its ceiling. Agentic workflows raise it." },
-              { tag: "Cloud", t: "The cost of skipping a data platform", d: "Every AI initiative is a data initiative in disguise." },
-            ].map((p) => (
-              <StaggerItem key={p.t}>
-                <article className="group h-full rounded-2xl bg-white border border-black/5 overflow-hidden hover:shadow-elegant transition-shadow">
-                  <div className="aspect-[16/9] bg-gradient-brand relative">
-                    <Bot className="absolute inset-0 m-auto size-16 text-white/40" />
-                  </div>
-                  <div className="p-6">
-                    <span className="text-[10px] uppercase tracking-[0.18em] text-brand font-medium">{p.tag}</span>
-                    <h3 className="mt-3 font-display text-xl text-ink group-hover:text-brand transition-colors">{p.t}</h3>
-                    <p className="mt-2 text-sm text-ink-muted">{p.d}</p>
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </div>
-      </section>
-
-      <CTASection />
-    </>
+      </div>
+    </section>
   );
 }

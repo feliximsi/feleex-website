@@ -1,79 +1,121 @@
+# Felix IMSI — Workforce Solutions Website
 
-# Felix IMSI — AI & Technology Website
+A premium, corporate multi-page site positioning Felix IMSI Private Limited as a trusted workforce solutions, staffing, HR outsourcing, and compliance partner. Built with TanStack Start, Tailwind v4, shadcn, and GSAP for professional motion.
 
-Reposition Felix IMSI as an AI-first technology company. Manpower stays as one small supporting vertical. Design language: IBM/Accenture/OpenAI corporate premium, using the exact brand red palette from the business card.
+## Brand & Design System
 
-## Design System
+Update `src/styles.css` tokens to the Felix IMSI palette:
+- `--primary`: #B30000 (Primary Red)
+- `--secondary`: #D90404 (Secondary Red)
+- `--accent`: #E63946
+- Deep Red #7A0000 for hover/emphasis
+- Background #FFFFFF, muted #F7F7F7, foreground #222222
+- Sharpen radius (0.375rem) for a corporate feel
+- Typography: Inter (body) + Manrope or Playfair-adjacent serif (headings) — loaded via `<link>` in `__root.tsx`. Final pair confirmed in build.
+- Generous whitespace, thin borders, subtle shadows, glass-morphism on sticky nav.
 
-- Palette (added as CSS tokens in `src/styles.css`, oklch conversions):
-  - Primary Red `#B30000`, Secondary `#D90404`, Deep `#7A0000`, Accent `#E63946`
-  - White `#FFFFFF`, Light Gray `#F8F8F8`, Dark `#111111`, Muted `#666666`
-- Typography: Instrument Serif (display headlines, echoes the logo's "Felix" serif) + Inter (body), loaded via `<link>` in `__root.tsx`.
-- Semantic tokens: `--brand`, `--brand-strong`, `--brand-deep`, `--brand-accent`, `--surface`, `--surface-muted`, gradients (`--gradient-brand`, `--gradient-hero`), shadows (`--shadow-elegant`, `--shadow-glow`).
-- Motion: `framer-motion` for scroll reveals, parallax, marquee, floating particles, staggered text. Custom SVG neural-network hero.
-
-## Routes (TanStack file-based, each with own `head()` for SEO)
+## Routes (each with unique head() meta)
 
 ```
-/                    Home
-/about               Company story + transformation timeline
-/services            All service categories (premium cards)
-/ai-solutions        Dedicated AI page
-/solutions           Business/industry solutions overview
-/industries          Industries served
-/portfolio           Filterable project grid
-/case-studies/$slug  Case study detail template + index at /case-studies
-/tech-stack          Interactive stack display
-/resources           Blog / insights hub
-/careers             Careers + openings
-/contact             Consultation + enquiry forms
-/workforce           Legacy manpower vertical (small, linked from footer + about)
+src/routes/
+  __root.tsx           → global shell: sticky nav (transparent→glass), footer, fonts, meta
+  index.tsx            → Home
+  about.tsx            → About Us
+  services.tsx         → Services
+  industries.tsx       → Industries
+  clients.tsx          → Clients
+  careers.tsx          → Careers
+  compliance.tsx       → Compliance
+  process.tsx          → Recruitment Process
+  gallery.tsx          → Gallery
+  contact.tsx          → Contact
 ```
 
-Root layout: sticky nav (transparent → glass on scroll), footer with red theme.
+Nav order matches the brief (Home, About, Services, Industries, Clients, Careers, Compliance, Gallery, Contact); Recruitment Process linked from Home + Services.
 
 ## Home Page Sections
 
-1. Hero — animated neural-network SVG + floating particles, headline "Building Intelligent Digital Futures", 3 CTAs.
-2. Trust marquee — Foxconn, Motherson, Mobile Electronics, DS Connectors, +others.
-3. Technology overview strip (AI • Software • Cloud • Automation).
-4. Services grid (8 cards with hover glow).
-5. AI Innovation showcase (animated data streams + demo mock).
-6. Featured projects (3 case-study teasers).
-7. Industries served (icon grid).
-8. Technology stack (animated logos).
-9. Digital transformation timeline (manpower → AI).
-10. Why Felix IMSI (stats + differentiators).
-11. Process (5 steps, scroll-triggered).
-12. Insights teaser (3 blog cards).
-13. Contact CTA band.
-14. Footer.
+1. **Hero** — animated industrial skyline (SVG grid + connection lines + floating workforce icons), headline "Building Strong Workforces. Powering Successful Businesses.", 3 CTAs (Hire Workforce, Request Consultation, View Services).
+2. About Felix IMSI (5+ years, mission snapshot)
+3. Workforce Solutions grid (top 6 services)
+4. Industries We Serve (icon grid, 13 industries)
+5. Why Choose Felix IMSI (8 pillars)
+6. Recruitment Process (8-step timeline w/ GSAP scroll reveal)
+7. Featured Workforce Categories (interactive cards, 10 categories)
+8. Compliance Management snapshot
+9. Client Testimonials (carousel)
+10. Trusted Clients (Foxconn, Motherson, Mobase, Wowtek, DS Connectors, New Century Sofa — text logo tiles)
+11. Business Statistics (animated counters: candidates deployed, clients, industries, years, success/retention rate)
+12. Gallery Preview (masonry, links to /gallery)
+13. FAQs (accordion)
+14. Contact CTA band
+15. Footer (red theme, quick links, services, contact, newsletter, socials, hours)
 
-## Shared Components
+## Services Page
 
-`SiteHeader`, `SiteFooter`, `NeuralHero`, `Marquee`, `ServiceCard`, `SectionHeading`, `StatCounter`, `Timeline`, `ParticleField`, `RevealOnScroll`, `GlowCard`, `CTASection`.
+Grouped premium cards for the 7 service families from the brief (Contract/Temporary, Permanent Recruitment, Industrial Manpower, Administrative Staffing, Technical Staffing, Payroll Management, HR Outsourcing, Compliance Services) — each with sub-service chips exactly matching the brief list.
 
-## Content Pages
+## Industries Page
 
-Each secondary route ships with real, well-written placeholder copy tailored to Felix IMSI (not lorem), premium layouts, scroll reveals, and unique hero treatments so no two pages feel identical. Portfolio uses static sample projects with filter chips. Case-study detail uses the dynamic template with structured sections (Challenge / Solution / Tech / Implementation / Results / ROI / Impact / Gallery).
+13 industries as cards with tailored blurbs and role examples per industry.
 
-Contact page: consultation form, project estimation form, WhatsApp button (`wa.me/919585978599`), email `rkrajaa@felixims.com`, address block, Google Maps embed for Perambur, Chennai.
+## Clients Page
 
-Workforce page: single focused page for IT Staffing, Contract Staffing, Resource Augmentation, Compliance, Temp, Permanent Hiring — restrained styling to keep it a supporting vertical.
+Corporate clients grid, long-term partnership narrative, case-study cards, testimonials.
+
+## About Page
+
+Overview, journey, vision, mission, core values, leadership placeholders, milestones, future goals.
+
+## Compliance Page
+
+Dedicated deep dive: PF, ESI, Professional Tax, Contract Labour Act, Minimum Wages, Records, Government Compliance, Labour Law Updates, Audit Support, Documentation. Trust-focused copy (no unverifiable certification claims).
+
+## Recruitment Process Page
+
+Interactive vertical timeline (GSAP ScrollTrigger) for the 8 steps.
+
+## Careers Page
+
+Current openings placeholder list, benefits, culture, training, growth, resume upload form (front-end only; wired to a mailto or a simple form — no backend added unless requested).
+
+## Gallery Page
+
+Filterable masonry grid using generated placeholder imagery (office, recruitment drives, industrial deployments, training, events).
+
+## Contact Page
+
+Business enquiry / Hire manpower / Quotation / Consultation tabs (single unified form, front-end only), embedded Google Maps iframe, WhatsApp float button, office address block.
+
+## Special Premium Sections (reused across pages)
+
+- Marquee band of service keywords
+- Interactive industry map (India SVG w/ hoverable regions — static illustrative)
+- Animated stat counters
+- Workforce category interactive cards
+
+## Animation System (GSAP + Motion for React)
+
+Install `gsap`. Use ScrollTrigger for section reveals, counter tweens, timeline animations, marquee, parallax hero grid. Keep motion restrained and corporate — no gaming/flashy effects. Use `<ClientOnly>`-safe patterns (dynamic import GSAP inside `useEffect`).
+
+## Imagery
+
+Generate hero background, industrial imagery, gallery photos, and workforce category illustrations via imagegen; store under `src/assets/`. No stock-photo placeholders.
+
+## Head Metadata / SEO
+
+- `__root.tsx`: site-wide defaults (title template, description, og/twitter, no og:image at root).
+- Each route: unique title, description, og:title, og:description; og:image only on leaf pages where a hero image exists.
+- Semantic HTML, single H1 per page, alt text on all imagery.
+
+## Out of Scope (for this plan)
+
+- Backend/CMS, authentication, live job board, real form submissions — forms are front-end only. Add later if requested (would enable Lovable Cloud).
+- Real client logos (rendered as styled name tiles unless assets provided).
 
 ## Technical Notes
 
-- Install: `framer-motion`, `lucide-react` (already present), `embla-carousel-react` if needed for marquee (else CSS keyframes).
-- Update `__root.tsx`: real site-wide title/description/OG, font `<link>` tags, sticky `SiteHeader` + `SiteFooter` wrapping `<Outlet />`.
-- Replace `src/routes/index.tsx` placeholder with home page.
-- All colors via semantic tokens — zero hardcoded hex in components.
-- Every route file defines its own `head()` with unique title/description/OG (no image, to let hosting inject preview).
-- No backend needed for v1; contact forms show a success toast (Sonner already available). Lovable Cloud can be added later if the user wants form submissions persisted.
-
-## Out of Scope (v1)
-
-- Real CMS / dynamic blog data (static sample posts).
-- Auth, database, form persistence.
-- Live AI demos (visual mocks only).
-
-Ready to build on approval.
+- All colors go through semantic tokens in `src/styles.css` — no hardcoded hex in components.
+- Fonts loaded via `<link>` in `__root.tsx` (never `@import` in CSS).
+- File-based routes; each `createFileRoute` path matches filename.
+- Reusable components in `src/components/site/` (Nav, Footer, SectionHeading, StatCounter, Marquee, ProcessTimeline, ServiceCard, IndustryCard, TestimonialCarousel, ClientLogos, FAQ, CTASection).

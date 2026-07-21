@@ -9,44 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
-import { Route as CareersRouteImport } from './routes/careers'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as IndustriesRouteImport } from './routes/industries'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SolutionsRouteImport } from './routes/solutions'
-import { Route as TechStackRouteImport } from './routes/tech-stack'
-import { Route as WorkforceRouteImport } from './routes/workforce'
-import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
-import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ComplianceRouteImport } from './routes/compliance'
+import { Route as ClientsRouteImport } from './routes/clients'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiSolutionsRoute = AiSolutionsRouteImport.update({
-  id: '/ai-solutions',
-  path: '/ai-solutions',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CareersRoute = CareersRouteImport.update({
-  id: '/careers',
-  path: '/careers',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -54,199 +29,131 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SolutionsRoute = SolutionsRouteImport.update({
-  id: '/solutions',
-  path: '/solutions',
+const ClientsRoute = ClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TechStackRoute = TechStackRouteImport.update({
-  id: '/tech-stack',
-  path: '/tech-stack',
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkforceRoute = WorkforceRouteImport.update({
-  id: '/workforce',
-  path: '/workforce',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
-  id: '/case-studies/',
-  path: '/case-studies/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
-  id: '/case-studies/$slug',
-  path: '/case-studies/$slug',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-solutions': typeof AiSolutionsRoute
   '/careers': typeof CareersRoute
+  '/clients': typeof ClientsRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
-  '/tech-stack': typeof TechStackRoute
-  '/workforce': typeof WorkforceRoute
-  '/case-studies/$slug': typeof CaseStudiesSlugRoute
-  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-solutions': typeof AiSolutionsRoute
   '/careers': typeof CareersRoute
+  '/clients': typeof ClientsRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
-  '/tech-stack': typeof TechStackRoute
-  '/workforce': typeof WorkforceRoute
-  '/case-studies/$slug': typeof CaseStudiesSlugRoute
-  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/ai-solutions': typeof AiSolutionsRoute
   '/careers': typeof CareersRoute
+  '/clients': typeof ClientsRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
   '/industries': typeof IndustriesRoute
-  '/portfolio': typeof PortfolioRoute
-  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
-  '/solutions': typeof SolutionsRoute
-  '/tech-stack': typeof TechStackRoute
-  '/workforce': typeof WorkforceRoute
-  '/case-studies/$slug': typeof CaseStudiesSlugRoute
-  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/ai-solutions'
     | '/careers'
+    | '/clients'
+    | '/compliance'
     | '/contact'
+    | '/gallery'
     | '/industries'
-    | '/portfolio'
-    | '/resources'
     | '/services'
-    | '/solutions'
-    | '/tech-stack'
-    | '/workforce'
-    | '/case-studies/$slug'
-    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/ai-solutions'
     | '/careers'
+    | '/clients'
+    | '/compliance'
     | '/contact'
+    | '/gallery'
     | '/industries'
-    | '/portfolio'
-    | '/resources'
     | '/services'
-    | '/solutions'
-    | '/tech-stack'
-    | '/workforce'
-    | '/case-studies/$slug'
-    | '/case-studies'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/ai-solutions'
     | '/careers'
+    | '/clients'
+    | '/compliance'
     | '/contact'
+    | '/gallery'
     | '/industries'
-    | '/portfolio'
-    | '/resources'
     | '/services'
-    | '/solutions'
-    | '/tech-stack'
-    | '/workforce'
-    | '/case-studies/$slug'
-    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AiSolutionsRoute: typeof AiSolutionsRoute
   CareersRoute: typeof CareersRoute
+  ClientsRoute: typeof ClientsRoute
+  ComplianceRoute: typeof ComplianceRoute
   ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
   IndustriesRoute: typeof IndustriesRoute
-  PortfolioRoute: typeof PortfolioRoute
-  ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
-  SolutionsRoute: typeof SolutionsRoute
-  TechStackRoute: typeof TechStackRoute
-  WorkforceRoute: typeof WorkforceRoute
-  CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
-  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-solutions': {
-      id: '/ai-solutions'
-      path: '/ai-solutions'
-      fullPath: '/ai-solutions'
-      preLoaderRoute: typeof AiSolutionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/careers': {
-      id: '/careers'
-      path: '/careers'
-      fullPath: '/careers'
-      preLoaderRoute: typeof CareersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -256,60 +163,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/solutions': {
-      id: '/solutions'
-      path: '/solutions'
-      fullPath: '/solutions'
-      preLoaderRoute: typeof SolutionsRouteImport
+    '/clients': {
+      id: '/clients'
+      path: '/clients'
+      fullPath: '/clients'
+      preLoaderRoute: typeof ClientsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tech-stack': {
-      id: '/tech-stack'
-      path: '/tech-stack'
-      fullPath: '/tech-stack'
-      preLoaderRoute: typeof TechStackRouteImport
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/workforce': {
-      id: '/workforce'
-      path: '/workforce'
-      fullPath: '/workforce'
-      preLoaderRoute: typeof WorkforceRouteImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/case-studies/': {
-      id: '/case-studies/'
-      path: '/case-studies'
-      fullPath: '/case-studies/'
-      preLoaderRoute: typeof CaseStudiesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/case-studies/$slug': {
-      id: '/case-studies/$slug'
-      path: '/case-studies/$slug'
-      fullPath: '/case-studies/$slug'
-      preLoaderRoute: typeof CaseStudiesSlugRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -318,29 +218,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AiSolutionsRoute: AiSolutionsRoute,
   CareersRoute: CareersRoute,
+  ClientsRoute: ClientsRoute,
+  ComplianceRoute: ComplianceRoute,
   ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
   IndustriesRoute: IndustriesRoute,
-  PortfolioRoute: PortfolioRoute,
-  ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
-  SolutionsRoute: SolutionsRoute,
-  TechStackRoute: TechStackRoute,
-  WorkforceRoute: WorkforceRoute,
-  CaseStudiesSlugRoute: CaseStudiesSlugRoute,
-  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

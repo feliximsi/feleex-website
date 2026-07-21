@@ -1,69 +1,47 @@
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-};
-
-export function Reveal({
-  children,
-  delay = 0,
-  className,
-  as = "div",
-}: {
+interface RevealProps {
   children: ReactNode;
+  className?: string;
   delay?: number;
-  className?: string;
-  as?: "div" | "section" | "h1" | "h2" | "h3" | "p";
-}) {
-  const MotionTag = motion[as] as typeof motion.div;
-  return (
-    <MotionTag
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={variants}
-      transition={{ delay }}
-      className={className}
-    >
-      {children}
-    </MotionTag>
-  );
+  y?: number;
 }
 
-export function Stagger({
-  children,
-  className,
-  gap = 0.08,
-}: {
-  children: ReactNode;
-  className?: string;
-  gap?: number;
-}) {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{ show: { transition: { staggerChildren: gap } } }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
+/**
+ * Simple, restrained fade-up reveal using IntersectionObserver.
+ * Corporate-appropriate motion: no bouncing, no long durations.
+ */
+export function Reveal({ children, className, delay = 0, y = 20 }: RevealProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
 
-export function StaggerItem({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.opacity = "0";
+    el.style.transform = `translateY(${y}px)`;
+    el.style.transition = `opacity 700ms ease-out, transform 700ms ease-out`;
+    el.style.transitionDelay = `${delay}ms`;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            io.unobserve(el);
+          }
+        }
+      },
+      { threshold: 0.12 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [delay, y]);
+
   return (
-    <motion.div variants={variants} className={className}>
+    <div ref={ref} className={cn(className)}>
       {children}
-    </motion.div>
+    </div>
   );
 }
