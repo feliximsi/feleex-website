@@ -96,13 +96,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Industrial manpower, staffing, HR outsourcing, payroll and statutory compliance for industries across India.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://felixims.com/felix_logo.png" },
-      { name: "twitter:image", content: "https://felixims.com/felix_logo.png" },
+      { property: "og:image", content: "https://felixims.com/feleex_logo.png" },
+      { name: "twitter:image", content: "https://felixims.com/feleex_logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/feleex_logo.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
