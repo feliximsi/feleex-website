@@ -29,10 +29,8 @@ export function SiteNav() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-border/60 bg-background/80 backdrop-blur-xl shadow-sm"
-          : "bg-transparent"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300 border-b border-border/60 bg-background/95 backdrop-blur-xl shadow-sm",
+        scrolled ? "py-0" : "py-1"
       )}
     >
       <div className="container-x flex h-16 items-center justify-between gap-6 md:h-20">
@@ -43,7 +41,7 @@ export function SiteNav() {
               FELIX IMSI
             </span>
             <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
-              Workforce Solutions
+              Private Limited
             </span>
           </span>
         </Link>
