@@ -73,9 +73,9 @@ function ContactPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
-            <ContactCard icon={Phone} title="Call us" line="+91 99999 99999" sub="Mon–Sat · 9AM–7PM IST" href="tel:+919999999999" />
-            <ContactCard icon={Mail} title="Email" line="info@feliximsi.com" sub="We respond within 24 hours" href="mailto:info@feliximsi.com" />
-            <ContactCard icon={MessageCircle} title="WhatsApp" line="Chat with our team" sub="Fast responses on workforce queries" href="https://wa.me/919999999999" />
+            <ContactCard icon={Phone} title="Call us" line="+91 95859 78599" sub="Mon–Sat · 9AM–7PM IST" href="tel:+919585978599" />
+            <ContactCard icon={Mail} title="Email" line="rkrajaa@felixims.com" sub="We respond within 24 hours" href="mailto:rkrajaa@felixims.com" />
+            <ContactCard icon={MessageCircle} title="WhatsApp" line="Chat with our team" sub="Fast responses on workforce queries" href="https://wa.me/919585978599" />
             <ContactCard icon={MapPin} title="Head Office" line="Corporate Office, India" sub="Pan-India deployment network" />
             <div className="rounded-sm bg-brand-deep text-white p-6">
               <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">

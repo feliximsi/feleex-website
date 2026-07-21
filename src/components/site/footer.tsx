@@ -8,9 +8,9 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-sm bg-white text-primary font-display font-black">
-                FI
-              </span>
+              <div className="grid h-12 w-12 place-items-center rounded-sm bg-white p-1">
+                <img src="/felix_logo.png" alt="Felix IMSI Logo" className="h-full w-full object-contain" />
+              </div>
               <div className="leading-tight">
                 <div className="font-display font-extrabold tracking-tight">FELIX IMSI</div>
                 <div className="text-[10px] uppercase tracking-[0.18em] text-white/70">
@@ -91,11 +91,11 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-                <a href="tel:+919999999999" className="hover:text-white">+91 99999 99999</a>
+                <a href="tel:+919585978599" className="hover:text-white">+91 95859 78599</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-                <a href="mailto:info@feliximsi.com" className="hover:text-white">info@feliximsi.com</a>
+                <a href="mailto:rkrajaa@felixims.com" className="hover:text-white">rkrajaa@felixims.com</a>
               </li>
             </ul>
             <div className="mt-5 text-xs text-white/60">

@@ -82,16 +82,16 @@ function HomePage() {
 
 function Hero() {
   return (
-    <section className="relative pt-24 md:pt-32 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
+    <section className="relative pt-24 md:pt-32 overflow-hidden isolate bg-brand-deep">
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImg}
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-80"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-deep/85 to-brand/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-deep/95 via-brand-deep/85 to-brand/70 mix-blend-multiply" />
         <div
           className="absolute inset-0 opacity-[0.08]"
           style={{
@@ -102,7 +102,7 @@ function Hero() {
         />
       </div>
 
-      <div className="container-x relative pt-16 pb-24 md:pt-24 md:pb-32">
+      <div className="container-x relative z-10 pt-16 pb-24 md:pt-24 md:pb-32">
         <div className="max-w-4xl">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">

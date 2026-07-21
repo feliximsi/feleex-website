@@ -64,7 +64,7 @@ export function SiteNav() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+919999999999"
+            href="tel:+919585978599"
             className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-primary"
           >
             <Phone className="h-3.5 w-3.5" />
