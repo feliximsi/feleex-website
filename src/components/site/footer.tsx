@@ -87,11 +87,11 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-                <span>Corporate Office, India</span>
+                <span>Chennai</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-                <a href="tel:+919585978599" className="hover:text-white">+91 95859 78599</a>
+                <a href="tel:+919789975479" className="hover:text-white">+91 97899 75479</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />

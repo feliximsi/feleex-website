@@ -55,7 +55,7 @@ function ContactPage() {
     text += `*Message:*\n${data.message || "N/A"}`;
     
     const encodedText = encodeURIComponent(text);
-    const waUrl = `https://wa.me/919585978599?text=${encodedText}`;
+    const waUrl = `https://wa.me/919789975479?text=${encodedText}`;
 
     window.open(waUrl, "_blank");
     toast.success("Redirecting to WhatsApp...");
@@ -73,10 +73,10 @@ function ContactPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-5 space-y-4">
-            <ContactCard icon={Phone} title="Call us" line="+91 95859 78599" sub="Mon–Sat · 9AM–7PM IST" href="tel:+919585978599" />
+            <ContactCard icon={Phone} title="Call us" line="+91 97899 75479" sub="Mon–Sat · 9AM–7PM IST" href="tel:+919789975479" />
             <ContactCard icon={Mail} title="Email" line="rkrajaa@felixims.com" sub="We respond within 24 hours" href="mailto:rkrajaa@felixims.com" />
-            <ContactCard icon={MessageCircle} title="WhatsApp" line="Chat with our team" sub="Fast responses on workforce queries" href="https://wa.me/919585978599" />
-            <ContactCard icon={MapPin} title="Head Office" line="Corporate Office, India" sub="Pan-India deployment network" />
+            <ContactCard icon={MessageCircle} title="WhatsApp" line="Chat with our team" sub="Fast responses on workforce queries" href="https://wa.me/919789975479" />
+            <ContactCard icon={MapPin} title="Head Office" line="Chennai" sub="Pan-India deployment network" />
             <div className="rounded-sm bg-brand-deep text-white p-6">
               <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
                 <Clock className="h-3.5 w-3.5" />
@@ -155,7 +155,7 @@ function ContactPage() {
         <div className="aspect-[21/9] w-full bg-muted">
           <iframe
             title="Felix IMSI office location"
-            src="https://www.google.com/maps?q=India&output=embed"
+            src="https://www.google.com/maps?q=Chennai&output=embed"
             className="h-full w-full grayscale"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

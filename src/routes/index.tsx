@@ -104,17 +104,11 @@ function Hero() {
 
       <div className="container-x relative z-10 pt-16 pb-24 md:pt-24 md:pb-32">
         <div className="max-w-4xl">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-white" />
-              Your Trusted Workforce Solutions Partner
-            </div>
-          </Reveal>
           <Reveal delay={100}>
-            <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white text-balance leading-[1.05]">
-              Building Strong Workforces.
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white text-balance leading-[1.05]">
+              Strong Workforces.
               <br />
-              <span className="text-white/70">Powering Successful Businesses.</span>
+              <span className="text-white/70">Manpowering Successful Business.</span>
             </h1>
           </Reveal>
           <Reveal delay={200}>
