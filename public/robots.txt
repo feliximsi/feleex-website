@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://felixims.com/sitemap.xml
+Sitemap: https://www.felixims.com/sitemap.xml
