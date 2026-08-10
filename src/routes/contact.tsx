@@ -18,9 +18,9 @@ export const Route = createFileRoute("/contact")({
       },
       { property: "og:title", content: "Contact Felix IMSI" },
       { property: "og:description", content: "Hire workforce, request a quotation, or schedule a consultation." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://www.felixims.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://www.felixims.com/contact" }],
   }),
   component: ContactPage,
 });

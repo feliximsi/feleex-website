@@ -16,9 +16,9 @@ export const Route = createFileRoute("/services")({
       },
       { property: "og:title", content: "Felix IMSI Services" },
       { property: "og:description", content: "The complete workforce, payroll and compliance suite." },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://www.felixims.com/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://www.felixims.com/services" }],
   }),
   component: ServicesPage,
 });
