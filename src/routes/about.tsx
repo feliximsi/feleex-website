@@ -18,9 +18,9 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:title", content: "About Felix IMSI" },
       { property: "og:description", content: "Our story, vision, mission and leadership." },
-      { property: "og:url", content: "https://www.felixims.com/about" },
+      { property: "og:url", content: "https://felixims.com/about" },
     ],
-    links: [{ rel: "canonical", href: "https://www.felixims.com/about" }],
+    links: [{ rel: "canonical", href: "https://felixims.com/about" }],
   }),
   component: AboutPage,
 });

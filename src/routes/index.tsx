@@ -41,9 +41,9 @@ export const Route = createFileRoute("/")({
         content:
           "Reliable industrial manpower, staffing, HR outsourcing, payroll, and compliance for industries across India.",
       },
-      { property: "og:url", content: "https://www.felixims.com/" },
+      { property: "og:url", content: "https://felixims.com/" },
     ],
-    links: [{ rel: "canonical", href: "https://www.felixims.com/" }],
+    links: [{ rel: "canonical", href: "https://felixims.com/" }],
   }),
   component: HomePage,
 });

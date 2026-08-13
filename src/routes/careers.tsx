@@ -17,9 +17,9 @@ export const Route = createFileRoute("/careers")({
       },
       { property: "og:title", content: "Careers at Felix IMSI" },
       { property: "og:description", content: "Openings, benefits and career growth at Felix IMSI." },
-      { property: "og:url", content: "https://www.felixims.com/careers" },
+      { property: "og:url", content: "https://felixims.com/careers" },
     ],
-    links: [{ rel: "canonical", href: "https://www.felixims.com/careers" }],
+    links: [{ rel: "canonical", href: "https://felixims.com/careers" }],
   }),
   component: CareersPage,
 });

@@ -16,9 +16,9 @@ export const Route = createFileRoute("/clients")({
       },
       { property: "og:title", content: "Our Clients — Felix IMSI" },
       { property: "og:description", content: "Industry partners and success stories." },
-      { property: "og:url", content: "https://www.felixims.com/clients" },
+      { property: "og:url", content: "https://felixims.com/clients" },
     ],
-    links: [{ rel: "canonical", href: "https://www.felixims.com/clients" }],
+    links: [{ rel: "canonical", href: "https://felixims.com/clients" }],
   }),
   component: ClientsPage,
 });

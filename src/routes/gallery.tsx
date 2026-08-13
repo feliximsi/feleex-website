@@ -24,9 +24,9 @@ export const Route = createFileRoute("/gallery")({
       },
       { property: "og:title", content: "Gallery — Felix IMSI" },
       { property: "og:description", content: "Recruitment, deployments, training and team moments." },
-      { property: "og:url", content: "https://www.felixims.com/gallery" },
+      { property: "og:url", content: "https://felixims.com/gallery" },
     ],
-    links: [{ rel: "canonical", href: "https://www.felixims.com/gallery" }],
+    links: [{ rel: "canonical", href: "https://felixims.com/gallery" }],
   }),
   component: GalleryPage,
 });
