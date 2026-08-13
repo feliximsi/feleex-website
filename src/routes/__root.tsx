@@ -81,14 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { title: "Felix IMSI — Workforce Solutions, Staffing & Compliance Partner" },
       {
         name: "description",
         content:
           "Felix IMSI Private Limited delivers industrial manpower, contract & permanent staffing, HR outsourcing, payroll and statutory compliance to businesses across India.",
       },
-      { name: "keywords", content: "felixims, felixims.com, Felix IMSI, Felix IMSI Private Limited, workforce solutions, industrial staffing Chennai" },
+      { name: "keywords", content: "felixims, www.felixims.com, felixims.com, Felix IMSI, Felix IMSI Private Limited, workforce solutions, industrial staffing Chennai" },
       { name: "author", content: "Felix IMSI Private Limited" },
       { property: "og:site_name", content: "Felix IMSI" },
       { property: "og:title", content: "Felix IMSI — Your Trusted Workforce Solutions Partner" },
@@ -100,6 +100,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.felixims.com/" },
       { property: "og:image", content: "https://www.felixims.com/felix_logo.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Felix IMSI Workforce Solutions Logo" },
       { name: "twitter:image", content: "https://www.felixims.com/felix_logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -107,6 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: "https://www.felixims.com/" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/felix_logo.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/felix_logo.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -119,21 +123,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Felix IMSI Private Limited",
-          alternateName: ["felixims", "felixims.com", "www.felixims.com", "Felix IMSI"],
-          url: "https://www.felixims.com",
-          logo: "https://www.felixims.com/felix_logo.png",
-          telephone: "+91-9789975479",
-          email: "rkrajaa@felixims.com",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Chennai",
-            addressCountry: "IN",
-          },
-          description:
-            "Workforce solutions, staffing, HR outsourcing, payroll and statutory compliance partner for industries across India.",
-          areaServed: "IN",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://www.felixims.com/#website",
+              url: "https://www.felixims.com/",
+              name: "Felix IMSI",
+              alternateName: ["felixims", "felixims.com", "www.felixims.com", "Felix IMSI Private Limited"],
+              description: "Workforce Solutions, Staffing & Compliance Partner in India",
+              publisher: {
+                "@id": "https://www.felixims.com/#organization"
+              }
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://www.felixims.com/#organization",
+              name: "Felix IMSI Private Limited",
+              alternateName: ["felixims", "Felix IMSI"],
+              url: "https://www.felixims.com/",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.felixims.com/felix_logo.png",
+                caption: "Felix IMSI Logo"
+              },
+              image: "https://www.felixims.com/felix_logo.png",
+              telephone: "+91-9789975479",
+              email: "rkrajaa@felixims.com",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Chennai",
+                addressCountry: "IN"
+              },
+              description: "Workforce solutions, staffing, HR outsourcing, payroll and statutory compliance partner for industries across India.",
+              areaServed: "IN"
+            }
+          ]
         }),
       },
     ],
