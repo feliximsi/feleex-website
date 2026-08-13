@@ -107,7 +107,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://www.felixims.com/" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/felix_logo.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/felix_logo.png" },
