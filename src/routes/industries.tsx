@@ -16,9 +16,9 @@ export const Route = createFileRoute("/industries")({
       },
       { property: "og:title", content: "Industries We Serve — Felix IMSI" },
       { property: "og:description", content: "Workforce solutions across India's core industries." },
-      { property: "og:url", content: "https://felixims.com/industries" },
+      { property: "og:url", content: "https://www.felixims.com/industries" },
     ],
-    links: [{ rel: "canonical", href: "https://felixims.com/industries" }],
+    links: [{ rel: "canonical", href: "https://www.felixims.com/industries" }],
   }),
   component: IndustriesPage,
 });

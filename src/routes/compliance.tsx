@@ -15,9 +15,9 @@ export const Route = createFileRoute("/compliance")({
       },
       { property: "og:title", content: "Compliance Services — Felix IMSI" },
       { property: "og:description", content: "PF, ESI, PT, LWF, CLRA and payroll compliance, handled end-to-end." },
-      { property: "og:url", content: "https://felixims.com/compliance" },
+      { property: "og:url", content: "https://www.felixims.com/compliance" },
     ],
-    links: [{ rel: "canonical", href: "https://felixims.com/compliance" }],
+    links: [{ rel: "canonical", href: "https://www.felixims.com/compliance" }],
   }),
   component: CompliancePage,
 });

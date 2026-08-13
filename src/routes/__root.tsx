@@ -98,16 +98,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Industrial manpower, staffing, HR outsourcing, payroll and statutory compliance for industries across India.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://felixims.com/" },
-      { property: "og:image", content: "https://felixims.com/felix_logo.png" },
+      { property: "og:url", content: "https://www.felixims.com/" },
+      { property: "og:image", content: "https://www.felixims.com/felix_logo.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Felix IMSI Workforce Solutions Logo" },
-      { name: "twitter:image", content: "https://felixims.com/felix_logo.png" },
+      { name: "twitter:image", content: "https://www.felixims.com/felix_logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://felixims.com/" },
+      { rel: "canonical", href: "https://www.felixims.com/" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/felix_logo.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/felix_logo.png" },
@@ -126,27 +126,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "WebSite",
-              "@id": "https://felixims.com/#website",
-              url: "https://felixims.com/",
+              "@id": "https://www.felixims.com/#website",
+              url: "https://www.felixims.com/",
               name: "Felix IMSI",
-              alternateName: ["felixims", "felixims.com", "Felix IMSI Private Limited"],
+              alternateName: ["felixims", "felixims.com", "www.felixims.com", "Felix IMSI Private Limited"],
               description: "Workforce Solutions, Staffing & Compliance Partner in India",
               publisher: {
-                "@id": "https://felixims.com/#organization"
+                "@id": "https://www.felixims.com/#organization"
               }
             },
             {
               "@type": "Organization",
-              "@id": "https://felixims.com/#organization",
+              "@id": "https://www.felixims.com/#organization",
               name: "Felix IMSI Private Limited",
               alternateName: ["felixims", "Felix IMSI"],
-              url: "https://felixims.com/",
+              url: "https://www.felixims.com/",
               logo: {
                 "@type": "ImageObject",
-                url: "https://felixims.com/felix_logo.png",
+                url: "https://www.felixims.com/felix_logo.png",
                 caption: "Felix IMSI Logo"
               },
-              image: "https://felixims.com/felix_logo.png",
+              image: "https://www.felixims.com/felix_logo.png",
               telephone: "+91-9789975479",
               email: "rkrajaa@felixims.com",
               address: {
